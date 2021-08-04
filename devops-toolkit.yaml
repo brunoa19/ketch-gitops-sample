@@ -1,0 +1,9 @@
+apiVersion: ketch.crossplane.io/v1alpha1
+kind: App
+metadata:
+  name: devops-toolkit
+spec:
+  forProvider:
+    name: devops-toolkit
+    image: vfarcic/devops-toolkit-series:latest
+    framework: dev

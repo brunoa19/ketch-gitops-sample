@@ -1,0 +1,10 @@
+apiVersion: ketch.crossplane.io/v1alpha1
+kind: App
+metadata:
+  name: podinfo-app
+spec:
+  forProvider:
+    name: podinfo
+    image: ghcr.io/stefanprodan/podinfo:6.0.0
+    framework: dev
+    port: 9898
