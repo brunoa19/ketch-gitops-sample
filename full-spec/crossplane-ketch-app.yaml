@@ -1,0 +1,21 @@
+apiVersion: ketch.crossplane.io/v1alpha1
+kind: App
+metadata:
+  name: app
+spec:
+  forProvider:
+    name: bulletinboard
+    image: docker.io/shipasoftware/bulletinboard:1.0
+    framework: dev
+    cnames: [ "app1.ketch.io", "app2.ketch.io", "app3.ketch.io"]
+    port: 8000
+    units: 5
+    processes:
+    - cmd:
+        - docker-entrypoint.sh
+        - npm
+        - start
+      name: web
+    routingSettings:
+      weight: 100
+    version: 1
